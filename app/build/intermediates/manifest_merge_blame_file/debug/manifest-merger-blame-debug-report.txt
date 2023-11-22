@@ -1,0 +1,111 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.raywenderlich.android.sleepguardian"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+11-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:6:3-79
+11-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:6:20-76
+12    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+12-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:7:3-77
+12-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:7:20-74
+13    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+13-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:8:3-92
+13-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:8:20-89
+14
+15    <application
+15-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:10:3-48:17
+16        android:allowBackup="false"
+16-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:11:7-34
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.5.0-rc01] C:\Users\harut\.gradle\caches\transforms-3\1d116930da3b1a2dbc3789fb3a6b79f3\transformed\core-1.5.0-rc01\AndroidManifest.xml:24:18-86
+18        android:debuggable="true"
+19        android:icon="@mipmap/ic_launcher"
+19-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:12:7-41
+20        android:label="@string/app_name"
+20-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:13:7-39
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:14:7-52
+22        android:supportsRtl="true"
+22-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:15:7-33
+23        android:testOnly="true"
+24        android:theme="@style/AppTheme" >
+24-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:16:7-38
+25
+26        <!-- Main Activity -->
+27        <activity
+27-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:20:5-27:16
+28            android:name="com.raywenderlich.android.sleepguardian.MainActivity"
+28-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:21:9-37
+29            android:theme="@style/SplashTheme" >
+29-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:22:9-43
+30            <intent-filter>
+30-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:23:7-26:23
+31                <action android:name="android.intent.action.MAIN" />
+31-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:24:9-61
+31-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:24:17-58
+32
+33                <category android:name="android.intent.category.LAUNCHER" />
+33-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:25:9-69
+33-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:25:19-66
+34            </intent-filter>
+35        </activity>
+36
+37        <receiver
+37-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:29:5-32:35
+38            android:name="com.raywenderlich.android.sleepguardian.receiver.SleepReceiver"
+38-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:30:9-47
+39            android:enabled="true"
+39-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:31:9-31
+40            android:exported="true" />
+40-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:32:9-32
+41        <receiver
+41-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:34:5-46:16
+42            android:name="com.raywenderlich.android.sleepguardian.receiver.BootReceiver"
+42-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:35:9-46
+43            android:enabled="true"
+43-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:36:9-31
+44            android:exported="true"
+44-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:37:9-32
+45            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+45-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:38:9-71
+46            <intent-filter>
+46-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:39:7-45:23
+47                <action android:name="android.intent.action.BOOT_COMPLETED" />
+47-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:40:9-71
+47-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:40:17-68
+48                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+48-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:42:9-74
+48-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:42:17-71
+49
+50                <category android:name="android.intent.category.DEFAULT" />
+50-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:44:9-68
+50-->C:\Users\harut\Documents\SleepApi\Final\app\src\main\AndroidManifest.xml:44:19-65
+51            </intent-filter>
+52        </receiver>
+53
+54        <activity
+54-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\e6580d54589d671f53101b7d40ae195c\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
+55            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+55-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\e6580d54589d671f53101b7d40ae195c\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
+56            android:exported="false"
+56-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\e6580d54589d671f53101b7d40ae195c\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
+57            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+57-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\e6580d54589d671f53101b7d40ae195c\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
+58
+59        <meta-data
+59-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\1b129de6247b312b482ca26c1e8b20ea\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
+60            android:name="com.google.android.gms.version"
+60-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\1b129de6247b312b482ca26c1e8b20ea\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
+61            android:value="@integer/google_play_services_version" />
+61-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\1b129de6247b312b482ca26c1e8b20ea\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
+62    </application>
+63
+64</manifest>
