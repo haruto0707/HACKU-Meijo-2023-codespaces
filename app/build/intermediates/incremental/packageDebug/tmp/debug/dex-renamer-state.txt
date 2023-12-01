@@ -1,4 +1,0 @@
-#Wed Nov 22 13:57:54 JST 2023
-base.0=C\:\\Users\\harut\\Documents\\SleepApi\\Final\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
