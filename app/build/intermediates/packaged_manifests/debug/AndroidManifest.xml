@@ -13,7 +13,7 @@
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
 
     <application
-        android:allowBackup="false"
+        android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,8 +22,14 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-
-        <!-- Main Activity -->
+        <activity
+            android:name="com.raywenderlich.android.sleepguardian.secondAlerm"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.raywenderlich.android.sleepguardian.firstAlarm"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Main Activity -->
         <activity
             android:name="com.raywenderlich.android.sleepguardian.MainActivity"
             android:theme="@style/SplashTheme" >

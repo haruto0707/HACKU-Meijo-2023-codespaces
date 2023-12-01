@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    tools:context=".Home">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <Button
+        android:id="@+id/second_act_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debug_First"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="bottom"/>
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/btn_add"
+        android:text="+"
+        android:textColor="#6F6F6F"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/toSecondAl_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debug_Second"
+        android:layout_gravity="bottom|end"/>
+
+
+</FrameLayout>
