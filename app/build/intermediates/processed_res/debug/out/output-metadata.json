@@ -4,7 +4,7 @@
     "type": "PROCESSED_RES",
     "kind": "Directory"
   },
-  "applicationId": "com.raywenderlich.android.sleepguardian",
+  "applicationId": "com.raywenderlich.android.sasleepguardian",
   "variantName": "debug",
   "elements": [
     {

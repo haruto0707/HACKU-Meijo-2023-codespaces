@@ -5,12 +5,19 @@ android {
   compileSdkVersion rootProject.ext.compileSdkVersion
 
   defaultConfig {
-    applicationId "com.raywenderlich.android.sleepguardian"
+    applicationId "com.raywenderlich.android.sasleepguardian"
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    kotlinOptions {
+      jvmTarget = "1.8"
+    }
+  }
+
+  tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions.jvmTarget = "1.8"
   }
 
   buildTypes {
