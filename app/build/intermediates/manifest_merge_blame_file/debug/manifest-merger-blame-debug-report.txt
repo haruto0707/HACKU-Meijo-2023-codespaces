@@ -6,120 +6,121 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="19"
-8-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml
-9        android:targetSdkVersion="30" />
-9-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-11-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:6:5-81
-11-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:6:22-78
+11-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:5:5-81
+11-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:5:22-78
 12    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
-12-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:7:5-79
-12-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:7:22-76
+12-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
-13-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:8:5-94
-13-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:8:22-91
+13-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:7:5-94
+13-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:7:22-91
 14
 15    <application
-15-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:10:5-52:19
+15-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:9:5-52:19
 16        android:allowBackup="true"
-16-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:11:9-35
+16-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:10:9-35
 17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-17-->[androidx.core:core:1.5.0-rc01] C:\Users\kqcdq\.gradle\caches\transforms-3\1d116930da3b1a2dbc3789fb3a6b79f3\transformed\core-1.5.0-rc01\AndroidManifest.xml:24:18-86
+17-->[androidx.core:core:1.5.0-rc01] C:\Users\harut\.gradle\caches\transforms-3\924568d244361d0cd89fcf8066df63ad\transformed\core-1.5.0-rc01\AndroidManifest.xml:24:18-86
 18        android:debuggable="true"
-19        android:icon="@mipmap/ic_launcher"
-19-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:12:9-43
-20        android:label="@string/app_name"
-20-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:13:9-41
-21        android:roundIcon="@mipmap/ic_launcher_round"
-21-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:14:9-54
-22        android:supportsRtl="true"
-22-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:15:9-35
-23        android:testOnly="true"
-24        android:theme="@style/AppTheme" >
-24-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:16:9-40
-25        <activity
-25-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:18:9-21:72
-26            android:name="com.raywenderlich.android.sleepguardian.secondAlerm"
-26-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:19:13-40
-27            android:exported="false"
-27-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:20:13-37
-28            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-28-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:21:13-69
-29        <activity
-29-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:22:9-25:72
-30            android:name="com.raywenderlich.android.sleepguardian.firstAlarm"
-30-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:23:13-39
-31            android:exported="false"
-31-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:24:13-37
-32            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Main Activity -->
-32-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:25:13-69
-33        <activity
-33-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:26:9-34:20
-34            android:name="com.raywenderlich.android.sleepguardian.MainActivity"
-34-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:27:13-41
-35            android:theme="@style/SplashTheme" >
-35-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:28:13-47
-36            <intent-filter>
-36-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:29:13-33:29
-37                <action android:name="android.intent.action.MAIN" />
-37-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:30:17-69
-37-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:30:25-66
-38
-39                <category android:name="android.intent.category.LAUNCHER" />
-39-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:32:17-77
-39-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:32:27-74
-40            </intent-filter>
-41        </activity>
-42
-43        <receiver
-43-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:36:9-39:39
-44            android:name="com.raywenderlich.android.sleepguardian.receiver.SleepReceiver"
-44-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:37:13-51
-45            android:enabled="true"
-45-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:38:13-35
-46            android:exported="true" />
-46-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:39:13-36
-47        <receiver
-47-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:40:9-51:20
-48            android:name="com.raywenderlich.android.sleepguardian.receiver.BootReceiver"
-48-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:41:13-50
-49            android:enabled="true"
-49-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:42:13-35
-50            android:exported="true"
-50-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:43:13-36
-51            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
-51-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:44:13-75
-52            <intent-filter>
-52-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:45:13-50:29
-53                <action android:name="android.intent.action.BOOT_COMPLETED" />
-53-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:46:17-79
-53-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:46:25-76
-54                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-54-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:47:17-82
-54-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:47:25-79
-55
-56                <category android:name="android.intent.category.DEFAULT" />
-56-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:49:17-76
-56-->C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:49:27-73
-57            </intent-filter>
-58        </receiver>
-59
-60        <activity
-60-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\kqcdq\.gradle\caches\transforms-3\e6580d54589d671f53101b7d40ae195c\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
-61            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-61-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\kqcdq\.gradle\caches\transforms-3\e6580d54589d671f53101b7d40ae195c\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
-62            android:exported="false"
-62-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\kqcdq\.gradle\caches\transforms-3\e6580d54589d671f53101b7d40ae195c\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
-63            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-63-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\kqcdq\.gradle\caches\transforms-3\e6580d54589d671f53101b7d40ae195c\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
-64
-65        <meta-data
-65-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\kqcdq\.gradle\caches\transforms-3\1b129de6247b312b482ca26c1e8b20ea\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
-66            android:name="com.google.android.gms.version"
-66-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\kqcdq\.gradle\caches\transforms-3\1b129de6247b312b482ca26c1e8b20ea\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
-67            android:value="@integer/google_play_services_version" />
-67-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\kqcdq\.gradle\caches\transforms-3\1b129de6247b312b482ca26c1e8b20ea\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
-68    </application>
-69
-70</manifest>
+19        android:extractNativeLibs="true"
+20        android:icon="@mipmap/ic_launcher"
+20-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:11:9-43
+21        android:label="@string/app_name"
+21-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:12:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:13:9-54
+23        android:supportsRtl="true"
+23-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:14:9-35
+24        android:testOnly="true"
+25        android:theme="@style/AppTheme" >
+25-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:15:9-40
+26        <activity
+26-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:17:9-20:72
+27            android:name="com.raywenderlich.android.sleepguardian.secondAlerm"
+27-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:18:13-40
+28            android:exported="false"
+28-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:19:13-37
+29            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+29-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:20:13-69
+30        <activity
+30-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:21:9-24:72
+31            android:name="com.raywenderlich.android.sleepguardian.firstAlarm"
+31-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:22:13-39
+32            android:exported="false"
+32-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:23:13-37
+33            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Main Activity -->
+33-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:24:13-69
+34        <activity
+34-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:25:9-34:20
+35            android:name="com.raywenderlich.android.sleepguardian.MainActivity"
+35-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:26:13-41
+36            android:exported="true"
+36-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:28:13-36
+37            android:theme="@style/SplashTheme" >
+37-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:27:13-47
+38            <intent-filter>
+38-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:29:13-33:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:30:17-69
+39-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:30:25-66
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:32:17-77
+41-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:32:27-74
+42            </intent-filter>
+43        </activity>
+44
+45        <receiver
+45-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:36:9-39:39
+46            android:name="com.raywenderlich.android.sleepguardian.receiver.SleepReceiver"
+46-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:37:13-51
+47            android:enabled="true"
+47-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:38:13-35
+48            android:exported="true" />
+48-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:39:13-36
+49        <receiver
+49-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:40:9-51:20
+50            android:name="com.raywenderlich.android.sleepguardian.receiver.BootReceiver"
+50-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:41:13-50
+51            android:enabled="true"
+51-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:42:13-35
+52            android:exported="true"
+52-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:43:13-36
+53            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+53-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:44:13-75
+54            <intent-filter>
+54-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:45:13-50:29
+55                <action android:name="android.intent.action.BOOT_COMPLETED" />
+55-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:46:17-79
+55-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:46:25-76
+56                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+56-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:47:17-82
+56-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:47:25-79
+57
+58                <category android:name="android.intent.category.DEFAULT" />
+58-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:49:17-76
+58-->C:\Prog3-C\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:49:27-73
+59            </intent-filter>
+60        </receiver>
+61
+62        <activity
+62-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\ab99014ffb9647359006d3747c94ff9e\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
+63            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+63-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\ab99014ffb9647359006d3747c94ff9e\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
+64            android:exported="false"
+64-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\ab99014ffb9647359006d3747c94ff9e\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
+65            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+65-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\ab99014ffb9647359006d3747c94ff9e\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
+66
+67        <meta-data
+67-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\4e1aeec1c688426b06e081cd032981cb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
+68            android:name="com.google.android.gms.version"
+68-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\4e1aeec1c688426b06e081cd032981cb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
+69            android:value="@integer/google_play_services_version" />
+69-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\harut\.gradle\caches\transforms-3\4e1aeec1c688426b06e081cd032981cb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
+70    </application>
+71
+72</manifest>
