@@ -85,8 +85,8 @@ ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\
 	android:name
 		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:8:22-74
 application
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:11:5-64:19
-INJECTED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:11:5-64:19
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:10:5-66:19
+INJECTED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:10:5-66:19
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\kqcdq\.gradle\caches\transforms-3\8c7ccdce08ffea2c8fbc964444f949b1\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\kqcdq\.gradle\caches\transforms-3\8c7ccdce08ffea2c8fbc964444f949b1\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\kqcdq\.gradle\caches\transforms-3\514916f7e311d6dd7734276d83f572c8\transformed\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -110,99 +110,107 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\kq
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] C:\Users\kqcdq\.gradle\caches\transforms-3\4e1f3c2e252e80a5b056372216698e61\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:14:9-41
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:13:9-41
 	tools:ignore
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:18:9-48
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:17:9-48
 	android:roundIcon
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:15:9-54
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:14:9-54
 	android:icon
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:13:9-43
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:17:9-40
-activity#com.raywenderlich.android.sleepguardian.secondAlerm
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:19:9-22:72
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:16:9-40
+receiver#com.raywenderlich.android.sleepguardian.receiver.StopButtonReceiver
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:18:9-21:39
+	android:enabled
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:20:13-35
 	android:exported
 		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:21:13-37
-	android:theme
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:22:13-69
 	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:20:13-40
-activity#com.raywenderlich.android.sleepguardian.firstAlarm
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:19:13-56
+activity#com.raywenderlich.android.sleepguardian.secondAlerm
 ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:23:9-26:72
 	android:exported
 		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:25:13-37
 	android:theme
 		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:26:13-69
 	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:24:13-39
-activity#com.raywenderlich.android.sleepguardian.MainActivity
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:27:9-36:20
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:24:13-40
+activity#com.raywenderlich.android.sleepguardian.firstAlarm
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:27:9-30:72
 	android:exported
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:30:13-36
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:29:13-37
 	android:theme
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:29:13-47
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:30:13-69
 	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:28:13-41
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:31:13-35:29
-action#android.intent.action.MAIN
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:32:17-69
-	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:32:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:34:17-77
-	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:34:27-74
-receiver#com.raywenderlich.android.sleepguardian.receiver.SleepReceiver
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:38:9-41:39
-	android:enabled
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:40:13-35
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:28:13-39
+activity#com.raywenderlich.android.sleepguardian.MainActivity
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:31:9-40:20
 	android:exported
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:41:13-36
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:33:13-36
+	android:theme
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:34:13-47
 	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:39:13-51
-receiver#com.raywenderlich.android.sleepguardian.receiver.BootReceiver
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:42:9-53:20
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:32:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:35:13-39:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:36:17-69
+	android:name
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:36:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:38:17-77
+	android:name
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:38:27-74
+receiver#com.raywenderlich.android.sleepguardian.receiver.SleepReceiver
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:42:9-45:40
 	android:enabled
 		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:44:13-35
 	android:exported
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:45:13-36
-	android:permission
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:46:13-75
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:45:13-37
 	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:43:13-50
-intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.QUICKBOOT_POWERON+category:name:android.intent.category.DEFAULT
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:47:13-52:29
-action#android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:48:17-79
-	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:48:25-76
-action#android.intent.action.QUICKBOOT_POWERON
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:49:17-82
-	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:49:25-79
-category#android.intent.category.DEFAULT
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:51:17-76
-	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:51:27-73
-receiver#com.raywenderlich.android.sleepguardian.receiver.AlarmReceiver
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:54:9-55:38
-	android:exported
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:55:13-36
-	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:54:19-57
-service#com.raywenderlich.android.sleepguardian.AlarmService
-ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:58:9-61:40
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:43:13-51
+receiver#com.raywenderlich.android.sleepguardian.receiver.BootReceiver
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:46:9-57:20
 	android:enabled
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:60:13-35
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:48:13-35
 	android:exported
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:61:13-37
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:49:13-37
+	android:permission
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:50:13-75
 	android:name
-		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:59:13-41
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:47:13-50
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.QUICKBOOT_POWERON+category:name:android.intent.category.DEFAULT
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:51:13-56:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:52:17-79
+	android:name
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:52:25-76
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:53:17-82
+	android:name
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:53:25-79
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:55:17-76
+	android:name
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:55:27-73
+receiver#com.raywenderlich.android.sleepguardian.receiver.AlarmReceiver
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:58:9-60:39
+	android:exported
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:60:13-36
+	android:name
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:59:13-51
+service#com.raywenderlich.android.sleepguardian.AlarmService
+ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:62:9-65:40
+	android:enabled
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:64:13-35
+	android:exported
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:65:13-37
+	android:name
+		ADDED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml:63:13-41
 uses-sdk
 INJECTED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\kqcdq\AndroidStudioProjects\HACKU-Meijo-2023-codespaces\app\src\main\AndroidManifest.xml
