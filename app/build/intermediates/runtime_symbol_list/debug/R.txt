@@ -1904,7 +1904,6 @@ int id blocking 0x7f080058
 int id bottom 0x7f080059
 int id bottom_navigation 0x7f08005a
 int id bounce 0x7f08005b
-int id button 0x7f08005c
 int id buttonPanel 0x7f08005d
 int id cache_measures 0x7f08005e
 int id cancelAlarmBtn 0x7f08005f

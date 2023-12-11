@@ -15,6 +15,7 @@ import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import java.util.Random
 
 class AlarmService : Service() {
 
@@ -46,12 +47,17 @@ class AlarmService : Service() {
         createNotificationChannel()
 
         val intent = Intent(this, firstAlarm::class.java)
-        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_background)
             .setContentTitle("Foxandroid Alarm Manager")
-            .setContentText("Subscribe for more android related content")
+            .setContentText("アラームが鳴りました")
             .setAutoCancel(true)
             .setDefaults(NotificationCompat.DEFAULT_ALL)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -64,7 +70,11 @@ class AlarmService : Service() {
             val name = "foxandroidReminderChannel"
             val descriptionText = "Channel For Alarm Manager"
             val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+            val channel = NotificationChannel(
+                CHANNEL_ID,
+                name,
+                importance
+            ).apply {
                 description = descriptionText
             }
             val notificationManager =
@@ -86,6 +96,6 @@ class AlarmService : Service() {
 
     companion object {
         private const val CHANNEL_ID = "foxandroid"
-        private const val NOTIFICATION_ID = 123
+        private val NOTIFICATION_ID = Random().nextInt()
     }
 }

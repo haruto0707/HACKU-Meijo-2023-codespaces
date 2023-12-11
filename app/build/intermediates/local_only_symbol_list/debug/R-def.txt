@@ -21,7 +21,6 @@ drawable ic_launcher_foreground
 drawable splash_background
 id add_btn
 id bottom_navigation
-id button
 id cancelAlarmBtn
 id frame_layout
 id imageView
