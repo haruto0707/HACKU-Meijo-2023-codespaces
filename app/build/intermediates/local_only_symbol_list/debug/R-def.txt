@@ -22,6 +22,7 @@ drawable splash_background
 id add_btn
 id bottom_navigation
 id button
+id cancelAlarmBtn
 id frame_layout
 id imageView
 id menu1
@@ -31,6 +32,9 @@ id navigation_alarm
 id navigation_calendar
 id navigation_settings
 id second_act_btn
+id selectTimeBtn
+id selectedTime
+id setAlarmBtn
 id textView
 id textView2
 id textView3

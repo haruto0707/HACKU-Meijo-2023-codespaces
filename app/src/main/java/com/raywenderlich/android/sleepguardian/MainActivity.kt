@@ -115,9 +115,32 @@ class MainActivity : AppCompatActivity() {
       true
     }
 
+//    binding = ActivityMainBinding.inflate(layoutInflater)
+//    createNotificationChannel()
+//
+//    binding.selectTimeBtn.set
+
 
 
   }
+
+//  private fun createNotificationChannel() {
+//
+//    if(Build.VERSION.SDK_INT >= 26)
+//    {
+//      val name : CharSequence ="foxandroidReminderChannel"
+//      val description ="Channnel For Alarm Manager"
+//      val importance = NotificationManager.IMPORTANCE_HIGH
+//      val channel = NotificationChannel("foxandroid",name,importance)
+//      channel.description = description
+//      val notificationManager  = getSystemService(
+//        NotificationManager::class.java
+//      )
+//
+//      notificationManager.createNotificationChannel(channel)
+//    }
+//
+//  }
 
   override fun onDestroy() {
     super.onDestroy()

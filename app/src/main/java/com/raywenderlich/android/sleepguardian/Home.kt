@@ -1,27 +1,36 @@
 package com.raywenderlich.android.sleepguardian
 
+import android.app.AlarmManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
+import com.raywenderlich.android.sleepguardian.databinding.FragmentHomeBinding
+import com.raywenderlich.android.sleepguardian.receiver.AlarmReceiver
+import java.util.Calendar
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Home.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Home : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var picker: MaterialTimePicker
+    private lateinit var calendar: Calendar
+    private lateinit var alarmManager : AlarmManager
+    private lateinit var  pendingIntent: PendingIntent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,41 +38,136 @@ class Home : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+        createNotificationChannel()
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= 26) {
+            val name: CharSequence = "foxandroidReminderChannel"
+            val description = "Channnel For Alarm Manager"
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val channel = NotificationChannel("foxandroid", name, importance)
+            channel.description = description
+
+            val notificationManager =
+                requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-
-        val secondActbutton = view.findViewById<Button>(R.id.second_act_btn)
-        secondActbutton.setOnClickListener {
+        val view = binding.root
+        val secondActButton = view.findViewById<Button>(R.id.second_act_btn)
+        secondActButton.setOnClickListener {
             val intent = Intent(requireContext(), firstAlarm::class.java)
             startActivity(intent)
         }
 
-        val toDB_secondbutton = view.findViewById<Button>(R.id.toSecondAl_btn)
-        toDB_secondbutton.setOnClickListener{
-            val intent = Intent(requireContext(),secondAlerm::class.java)
+        val toDBSecondButton = view.findViewById<Button>(R.id.toSecondAl_btn)
+        toDBSecondButton.setOnClickListener {
+            val intent = Intent(requireContext(), secondAlerm::class.java)
             startActivity(intent)
+        }
+
+        binding.selectTimeBtn.setOnClickListener {
+            showTimePicker()
+        }
+        binding.setAlarmBtn.setOnClickListener {
+            // ここにアラームを設定する処理を追加
+            setAlarm()
+        }
+        binding.cancelAlarmBtn.setOnClickListener {
+            // ここにアラームをキャンセルする処理を追加
+            cancelAlarm()
         }
 
         return view
     }
 
+    private fun cancelAlarm() {
+
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), AlarmReceiver::class.java)
+
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        alarmManager.cancel(pendingIntent)
+
+        Toast.makeText(requireContext(),"Alarm Canceled",Toast.LENGTH_LONG).show()
+
+    }
+
+    private fun setAlarm() {
+        // AlarmManagerを取得
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+
+        // アラームをセットするためのIntent
+        val intent = Intent(requireContext(), AlarmReceiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
+        // アラームを設定
+        alarmManager.setRepeating(
+            AlarmManager.RTC_WAKEUP,
+            calendar.timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+
+        Toast.makeText(requireContext(), "Alarm set Successfully", Toast.LENGTH_SHORT).show()
+    }
+
+
+
+
+    private fun showTimePicker() {
+        picker = MaterialTimePicker.Builder()
+            .setTimeFormat(TimeFormat.CLOCK_12H)
+            .setHour(12)
+            .setMinute(0)
+            .setTitleText("Select Alarm Time")  // タイポ修正
+            .build()
+
+        picker.show(parentFragmentManager, "foxandroid")
+
+        picker.addOnPositiveButtonClickListener {
+            val formattedTime = if (picker.hour > 12) {
+                String.format("%02d", picker.hour - 12) + ":" + String.format(
+                    "%02d",
+                    picker.minute
+                ) + "PM"
+            } else {
+                String.format("%02d", picker.hour) + ":" + String.format(
+                    "%02d",
+                    picker.minute
+                ) + "AM"
+            }
+
+            binding.selectedTime.text = formattedTime
+
+            calendar = Calendar.getInstance()
+            calendar[Calendar.HOUR_OF_DAY] = picker.hour
+            calendar[Calendar.MINUTE] = picker.minute
+            calendar[Calendar.SECOND] = 0
+            calendar[Calendar.MILLISECOND] = 0
+        }
+    }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Home.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             Home().apply {
@@ -73,4 +177,14 @@ class Home : Fragment() {
                 }
             }
     }
+
+//    class AlarmReceiver : BroadcastReceiver() {
+//        override fun onReceive(context: Context?, intent: Intent?) {
+//            val i = Intent(context, firstAlarm::class.java)
+//            i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//            context?.startActivity(i)
+//        }
+//    }
+
+
 }

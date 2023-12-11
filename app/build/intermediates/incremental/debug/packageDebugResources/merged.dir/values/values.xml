@@ -11,7 +11,7 @@
     <string name="app_name">Sleep Guardian</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="plus_button_description">Description for plus button</string>
-    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
     
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
