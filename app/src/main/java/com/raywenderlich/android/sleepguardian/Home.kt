@@ -75,7 +75,36 @@ class Home : Fragment() {
             cancelAlarm()
         }
 
+        // アプリ起動時に保存された時刻を読み込んで表示
+        val savedAlarmTime = getSavedAlarmTime()
+        if (savedAlarmTime != -1L) {
+            calendar = Calendar.getInstance()
+            calendar.timeInMillis = savedAlarmTime
+            updateSelectedTimeText()
+        }
+
         return view
+    }
+
+    private fun getSavedAlarmTime(): Long {
+        val sharedPreferences = requireContext().getSharedPreferences("AlarmPreferences", Context.MODE_PRIVATE)
+        return sharedPreferences.getLong("alarmTime", -1L)
+    }
+
+    private fun updateSelectedTimeText() {
+        val formattedTime = if (calendar[Calendar.HOUR_OF_DAY] > 12) {
+            String.format("%02d", calendar[Calendar.HOUR_OF_DAY] - 12) + ":" + String.format(
+                "%02d",
+                calendar[Calendar.MINUTE]
+            ) + "PM"
+        } else {
+            String.format("%02d", calendar[Calendar.HOUR_OF_DAY]) + ":" + String.format(
+                "%02d",
+                calendar[Calendar.MINUTE]
+            ) + "AM"
+        }
+
+        binding.selectedTime.text = formattedTime
     }
 
     private fun cancelAlarm() {
@@ -109,6 +138,16 @@ class Home : Fragment() {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
+        // ユーザーが選択した時刻をセット
+        calendar = Calendar.getInstance()
+        calendar[Calendar.HOUR_OF_DAY] = picker.hour
+        calendar[Calendar.MINUTE] = picker.minute
+        calendar[Calendar.SECOND] = 0
+        calendar[Calendar.MILLISECOND] = 0
+
+        // SharedPreferencesにユーザーが選択した時刻を保存
+        saveAlarmTime(calendar.timeInMillis)
+
         // アラームを設定
         alarmManager.setRepeating(
             AlarmManager.RTC_WAKEUP,
@@ -119,6 +158,15 @@ class Home : Fragment() {
 
         Toast.makeText(requireContext(), "アラームをセットしました", Toast.LENGTH_SHORT).show()
     }
+
+    private fun saveAlarmTime(timeInMillis: Long) {
+        val sharedPreferences = requireContext().getSharedPreferences("AlarmPreferences", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putLong("alarmTime", timeInMillis)
+        editor.apply()
+    }
+
+
 
 
 
