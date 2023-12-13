@@ -26,16 +26,16 @@ class AlarmReceiver : BroadcastReceiver() {
         )
 
 
-        val builder = NotificationCompat.Builder(context!!, "foxandroid")
-            .setSmallIcon(R.drawable.ic_launcher_background)
-            .setContentTitle("Foxandroid Alarm Manager")
-            .setContentText("Subscribe for more android related content")
-            .setAutoCancel(true)
-            .setDefaults(NotificationCompat.DEFAULT_ALL)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .setContentIntent(pendingIntent)
-
-        val notificationManager = NotificationManagerCompat.from(context)
-        notificationManager.notify(123, builder.build())
+//        val builder = NotificationCompat.Builder(context!!, "foxandroid")
+//            .setSmallIcon(R.drawable.ic_launcher_background)
+//            .setContentTitle("Foxandroid Alarm Manager")
+//            .setContentText("Subscribe for more android related content")
+//            .setAutoCancel(true)
+//            .setDefaults(NotificationCompat.DEFAULT_ALL)
+//            .setPriority(NotificationCompat.PRIORITY_HIGH)
+//            .setContentIntent(pendingIntent)
+//
+//        val notificationManager = NotificationManagerCompat.from(context)
+//        notificationManager.notify(123, builder.build())
     }
 }

@@ -60,7 +60,7 @@ class AlarmService : Service() {
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_background)
-            .setContentTitle("Foxandroid Alarm Manager")
+            .setContentTitle("Sleep Guardian")
             .setContentText("アラームが鳴りました")
             .setAutoCancel(false)
             .setDefaults(NotificationCompat.DEFAULT_ALL)

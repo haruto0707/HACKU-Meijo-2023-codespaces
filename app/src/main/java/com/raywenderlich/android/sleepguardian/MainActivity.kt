@@ -103,10 +103,10 @@ class MainActivity : AppCompatActivity() {
           replaceFragment(Home())
           supportActionBar?.title = "アラーム"  // Use supportActionBar to set the title
         }
-        R.id.navigation_calendar -> {
-          replaceFragment(Calendar())
-          supportActionBar?.title = "カレンダー"  // Set the title for calendar
-        }
+//        R.id.navigation_calendar -> {
+////          replaceFragment(Calendar())
+////          supportActionBar?.title = "カレンダー"  // Set the title for calendar
+////        }
         R.id.navigation_settings -> {
           replaceFragment(Setting())
           supportActionBar?.title = "設定"  // Set the title for settings

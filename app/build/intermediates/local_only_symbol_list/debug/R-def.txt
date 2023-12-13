@@ -19,7 +19,6 @@ drawable first_time
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable splash_background
-id add_btn
 id bottom_navigation
 id cancelAlarmBtn
 id frame_layout
@@ -28,9 +27,7 @@ id menu1
 id myImage
 id myImageView
 id navigation_alarm
-id navigation_calendar
 id navigation_settings
-id second_act_btn
 id selectTimeBtn
 id selectedTime
 id setAlarmBtn
@@ -38,7 +35,6 @@ id textView
 id textView2
 id textView3
 id toHome
-id toSecondAl_btn
 layout activity_first_alarm
 layout activity_main
 layout activity_second_alerm

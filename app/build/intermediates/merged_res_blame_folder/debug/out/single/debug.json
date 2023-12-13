@@ -4,12 +4,12 @@
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\layout\\fragment_setting.xml"
     },
     {
-        "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\drawable-mdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-pngs-22:\\drawable-mdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\drawable-mdpi_baseline_calendar_month_24.png.flat",
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-pngs-22:\\drawable-mdpi\\baseline_calendar_month_24.png"
+    },
+    {
+        "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-pngs-22:\\drawable-mdpi\\ic_launcher_background.png"
     },
     {
         "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\mipmap-hdpi_ic_launcher_round.png.flat",
@@ -28,12 +28,12 @@
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\drawable\\first_time.xml"
     },
     {
-        "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\mipmap-xhdpi\\ic_launcher_foreground.png"
-    },
-    {
         "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\drawable-anydpi-v21_baseline_calendar_month_24.xml.flat",
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-pngs-22:\\drawable-anydpi-v21\\baseline_calendar_month_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
@@ -140,6 +140,10 @@
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "com.raywenderlich.android.sleepguardian.app-merged_res-26:/menu_bottom_menu.xml.flat",
+        "source": "com.raywenderlich.android.sleepguardian.app-main-28:/menu/bottom_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\layout\\fragment_home.xml"
     },
@@ -210,10 +214,6 @@
     {
         "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\mipmap-mdpi\\ic_launcher_foreground.png"
-    },
-    {
-        "merged": "com.raywenderlich.android.sleepguardian.app-merged_res-26:/layout_activity_second_alerm.xml.flat",
-        "source": "com.raywenderlich.android.sleepguardian.app-main-28:/layout/activity_second_alerm.xml"
     },
     {
         "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-merged_res-26:\\mipmap-xhdpi_ic_launcher.png.flat",

@@ -45,10 +45,10 @@ class Home : Fragment() {
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= 26) {
-            val name: CharSequence = "foxandroidReminderChannel"
+            val name: CharSequence = "Sleep GuardianReminderChannel"
             val description = "Channnel For Alarm Manager"
             val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel("foxandroid", name, importance)
+            val channel = NotificationChannel("Sleep Guardian", name, importance)
             channel.description = description
 
             val notificationManager =
@@ -62,17 +62,6 @@ class Home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = binding.root
-        val secondActButton = view.findViewById<Button>(R.id.second_act_btn)
-        secondActButton.setOnClickListener {
-            val intent = Intent(requireContext(), firstAlarm::class.java)
-            startActivity(intent)
-        }
-
-        val toDBSecondButton = view.findViewById<Button>(R.id.toSecondAl_btn)
-        toDBSecondButton.setOnClickListener {
-            val intent = Intent(requireContext(), secondAlerm::class.java)
-            startActivity(intent)
-        }
 
         binding.selectTimeBtn.setOnClickListener {
             showTimePicker()
@@ -103,7 +92,7 @@ class Home : Fragment() {
 
         alarmManager.cancel(pendingIntent)
 
-        Toast.makeText(requireContext(),"Alarm Canceled",Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(),"アラームをキャンセルしました",Toast.LENGTH_LONG).show()
 
     }
 
@@ -128,7 +117,7 @@ class Home : Fragment() {
             pendingIntent
         )
 
-        Toast.makeText(requireContext(), "Alarm set Successfully", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "アラームをセットしました", Toast.LENGTH_SHORT).show()
     }
 
 
@@ -139,10 +128,10 @@ class Home : Fragment() {
             .setTimeFormat(TimeFormat.CLOCK_12H)
             .setHour(12)
             .setMinute(0)
-            .setTitleText("Select Alarm Time")  // タイポ修正
+            .setTitleText("時間をセットしてください")  // タイポ修正
             .build()
 
-        picker.show(parentFragmentManager, "foxandroid")
+        picker.show(parentFragmentManager, "Sleep Guardian")
 
         picker.addOnPositiveButtonClickListener {
             val formattedTime = if (picker.hour > 12) {
@@ -177,14 +166,5 @@ class Home : Fragment() {
                 }
             }
     }
-
-//    class AlarmReceiver : BroadcastReceiver() {
-//        override fun onReceive(context: Context?, intent: Intent?) {
-//            val i = Intent(context, firstAlarm::class.java)
-//            i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-//            context?.startActivity(i)
-//        }
-//    }
-
 
 }

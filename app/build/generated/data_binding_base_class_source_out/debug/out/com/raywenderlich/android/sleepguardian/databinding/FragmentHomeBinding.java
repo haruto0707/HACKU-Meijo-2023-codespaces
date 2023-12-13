@@ -21,13 +21,7 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button addBtn;
-
-  @NonNull
   public final Button cancelAlarmBtn;
-
-  @NonNull
-  public final Button secondActBtn;
 
   @NonNull
   public final Button selectTimeBtn;
@@ -38,20 +32,13 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final Button setAlarmBtn;
 
-  @NonNull
-  public final Button toSecondAlBtn;
-
-  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull Button addBtn,
-      @NonNull Button cancelAlarmBtn, @NonNull Button secondActBtn, @NonNull Button selectTimeBtn,
-      @NonNull TextView selectedTime, @NonNull Button setAlarmBtn, @NonNull Button toSecondAlBtn) {
+  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull Button cancelAlarmBtn,
+      @NonNull Button selectTimeBtn, @NonNull TextView selectedTime, @NonNull Button setAlarmBtn) {
     this.rootView = rootView;
-    this.addBtn = addBtn;
     this.cancelAlarmBtn = cancelAlarmBtn;
-    this.secondActBtn = secondActBtn;
     this.selectTimeBtn = selectTimeBtn;
     this.selectedTime = selectedTime;
     this.setAlarmBtn = setAlarmBtn;
-    this.toSecondAlBtn = toSecondAlBtn;
   }
 
   @Override
@@ -81,21 +68,9 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.add_btn;
-      Button addBtn = ViewBindings.findChildViewById(rootView, id);
-      if (addBtn == null) {
-        break missingId;
-      }
-
       id = R.id.cancelAlarmBtn;
       Button cancelAlarmBtn = ViewBindings.findChildViewById(rootView, id);
       if (cancelAlarmBtn == null) {
-        break missingId;
-      }
-
-      id = R.id.second_act_btn;
-      Button secondActBtn = ViewBindings.findChildViewById(rootView, id);
-      if (secondActBtn == null) {
         break missingId;
       }
 
@@ -117,14 +92,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.toSecondAl_btn;
-      Button toSecondAlBtn = ViewBindings.findChildViewById(rootView, id);
-      if (toSecondAlBtn == null) {
-        break missingId;
-      }
-
-      return new FragmentHomeBinding((FrameLayout) rootView, addBtn, cancelAlarmBtn, secondActBtn,
-          selectTimeBtn, selectedTime, setAlarmBtn, toSecondAlBtn);
+      return new FragmentHomeBinding((FrameLayout) rootView, cancelAlarmBtn, selectTimeBtn,
+          selectedTime, setAlarmBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

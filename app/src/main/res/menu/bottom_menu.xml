@@ -5,10 +5,10 @@
         android:title="アラーム"
         android:icon="@drawable/baseline_access_alarm_24"
     />
-    <item
-        android:id="@+id/navigation_calendar"
-        android:title="カレンダー"
-        android:icon="@drawable/baseline_calendar_month_24"/>
+<!--    <item-->
+<!--        android:id="@+id/navigation_calendar"-->
+<!--        android:title="カレンダー"-->
+<!--        android:icon="@drawable/baseline_calendar_month_24"/>-->
     <item
         android:id="@+id/navigation_settings"
         android:title="設定"

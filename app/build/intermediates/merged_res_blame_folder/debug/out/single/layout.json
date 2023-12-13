@@ -8,10 +8,6 @@
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\layout\\fragment_first_alarm.xml"
     },
     {
-        "merged": "com.raywenderlich.android.sleepguardian.app-mergeDebugResources-25:/layout/activity_second_alerm.xml",
-        "source": "com.raywenderlich.android.sleepguardian.app-main-28:/layout/activity_second_alerm.xml"
-    },
-    {
         "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-mergeDebugResources-25:\\layout\\activity_main.xml",
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\layout\\activity_main.xml"
     },
@@ -34,5 +30,9 @@
     {
         "merged": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-mergeDebugResources-25:\\layout\\fragment_home.xml",
         "source": "C:\\Users\\kqcdq\\.gradle\\daemon\\8.0\\com.raywenderlich.android.sleepguardian.app-main-28:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "com.raywenderlich.android.sleepguardian.app-mergeDebugResources-25:/layout/fragment_home.xml",
+        "source": "com.raywenderlich.android.sleepguardian.app-main-28:/layout/fragment_home.xml"
     }
 ]
