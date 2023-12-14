@@ -72,7 +72,7 @@ class AlarmService : Service() {
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "foxandroidReminderChannel"
+            val name = "Sleep GuardianReminderChannel"
             val descriptionText = "Channel For Alarm Manager"
             val importance = NotificationManager.IMPORTANCE_HIGH
             val channel = NotificationChannel(
@@ -100,7 +100,7 @@ class AlarmService : Service() {
     }
 
     companion object {
-        private const val CHANNEL_ID = "foxandroid"
+        private const val CHANNEL_ID = "Sleep Guardian"
         private val NOTIFICATION_ID = Random().nextInt()
     }
 }
