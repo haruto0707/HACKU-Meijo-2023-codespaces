@@ -5,19 +5,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.raywenderlich.android.sleepguardian.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentSettingBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentSettingBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final SeekBar volumeSeekBar;
+
+  @NonNull
+  public final TextView volumeText;
+
+  private FragmentSettingBinding(@NonNull FrameLayout rootView, @NonNull SeekBar volumeSeekBar,
+      @NonNull TextView volumeText) {
     this.rootView = rootView;
+    this.volumeSeekBar = volumeSeekBar;
+    this.volumeText = volumeText;
   }
 
   @Override
@@ -43,10 +56,25 @@ public final class FragmentSettingBinding implements ViewBinding {
 
   @NonNull
   public static FragmentSettingBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.volumeSeekBar;
+      SeekBar volumeSeekBar = ViewBindings.findChildViewById(rootView, id);
+      if (volumeSeekBar == null) {
+        break missingId;
+      }
 
-    return new FragmentSettingBinding((FrameLayout) rootView);
+      id = R.id.volumeText;
+      TextView volumeText = ViewBindings.findChildViewById(rootView, id);
+      if (volumeText == null) {
+        break missingId;
+      }
+
+      return new FragmentSettingBinding((FrameLayout) rootView, volumeSeekBar, volumeText);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

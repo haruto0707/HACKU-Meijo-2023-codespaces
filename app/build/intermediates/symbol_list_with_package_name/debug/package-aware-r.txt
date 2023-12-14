@@ -2052,7 +2052,6 @@ id material_timepicker_mode_button
 id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
-id menu1
 id message
 id middle
 id mini
@@ -2257,6 +2256,8 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id volumeSeekBar
+id volumeText
 id wide
 id withText
 id withinBounds
@@ -2558,6 +2559,7 @@ string path_password_strike_through
 string plus_button_description
 string search_menu_title
 string status_bar_notification_info_overflow
+string volume_percentage
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

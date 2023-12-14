@@ -176,7 +176,7 @@ class Home : Fragment() {
             .setTimeFormat(TimeFormat.CLOCK_12H)
             .setHour(12)
             .setMinute(0)
-            .setTitleText("時間をセットしてください")  // タイポ修正
+            .setTitleText("時間を設定してください")
             .build()
 
         picker.show(parentFragmentManager, "Sleep Guardian")

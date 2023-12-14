@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/selectedTime"
         android:layout_marginTop="200dp"
-        android:text="08:45 PM"
+        android:text="XX:XX"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="46dp"/>
@@ -27,7 +27,7 @@
         android:layout_height="70dp"
         android:layout_marginHorizontal="26dp"
         android:layout_marginTop="36dp"
-        android:text="Select Time"
+        android:text="時間設定"
         android:textSize="26dp"
         android:translationY="250dp" />
 
@@ -37,7 +37,7 @@
         android:layout_height="70dp"
         android:layout_marginHorizontal="26dp"
         android:layout_marginTop="36dp"
-        android:text="Set Alarm"
+        android:text="アラームセット"
         android:textSize="26dp"
         android:translationY="330dp" />
 
@@ -47,7 +47,7 @@
         android:layout_height="70dp"
         android:layout_marginHorizontal="26dp"
         android:layout_marginTop="8dp"
-        android:text="Cancel Alarm"
+        android:text="アラームキャンセル"
         android:textSize="26dp"
         android:translationY="440dp" />
 

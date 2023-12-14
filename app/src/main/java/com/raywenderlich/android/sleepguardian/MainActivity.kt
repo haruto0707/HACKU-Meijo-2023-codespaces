@@ -34,6 +34,7 @@
 
 package com.raywenderlich.android.sleepguardian
 
+import Setting
 import android.Manifest.permission.ACTIVITY_RECOGNITION
 import android.content.Intent
 import android.net.Uri
@@ -168,19 +169,19 @@ class MainActivity : AppCompatActivity() {
     return if (resourceId > 0) resources.getDimensionPixelSize(resourceId) else 0
   }
 
-  //アクションバーのメニュー表示
-  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-    menuInflater.inflate(R.menu.actionbar, menu)
-    return true
-  }
+//  //アクションバーのメニュー表示
+//  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//    menuInflater.inflate(R.menu.actionbar, menu)
+//    return true
+//  }
 
-  //アクションバーのボタン押下
-  override fun onOptionsItemSelected(item: MenuItem): Boolean {
-    when (item.itemId) {
-      R.id.menu1 -> return true
-      }
-    return super.onOptionsItemSelected(item)
-  }
+//  //アクションバーのボタン押下
+//  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//    when (item.itemId) {
+//      R.id.menu1 -> return true
+//      }
+//    return super.onOptionsItemSelected(item)
+//  }
 
   //BottomNavigationViewの画面フラグ用関数
   private fun replaceFragment(fragment : Fragment)

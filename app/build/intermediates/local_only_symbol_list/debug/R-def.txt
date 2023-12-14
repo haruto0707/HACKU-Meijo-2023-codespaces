@@ -23,7 +23,6 @@ id bottom_navigation
 id cancelAlarmBtn
 id frame_layout
 id imageView
-id menu1
 id myImage
 id myImageView
 id navigation_alarm
@@ -35,6 +34,8 @@ id textView
 id textView2
 id textView3
 id toHome
+id volumeSeekBar
+id volumeText
 layout activity_first_alarm
 layout activity_main
 layout activity_second_alerm
@@ -51,6 +52,7 @@ mipmap ic_launcher_round
 string app_name
 string hello_blank_fragment
 string plus_button_description
+string volume_percentage
 style AppTheme
 style SplashTheme
 style TextAppearance.AppCompat.Widget.ActionBar.Title
