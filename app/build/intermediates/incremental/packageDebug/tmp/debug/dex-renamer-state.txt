@@ -1,4 +1,4 @@
-#Fri Dec 15 11:33:23 JST 2023
+#Fri Dec 15 20:44:58 JST 2023
 base.0=C\:\\Prog3-C\\HACKU-Meijo-2023-codespaces\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

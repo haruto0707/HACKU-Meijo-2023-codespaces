@@ -38,7 +38,11 @@
         <receiver
             android:name=".receiver.SleepReceiver"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ACTION_ALARM_STOPPED" />
+            </intent-filter>
+        </receiver>
         <receiver
             android:name=".receiver.BootReceiver"
             android:enabled="true"
@@ -58,7 +62,7 @@
             android:exported="false"
             android:enabled="true">
             <intent-filter>
-                <action android:name="custom.action" />
+                <action android:name="ACTION_ALARM_STOPPED" />
             </intent-filter>
         </receiver>
         <service

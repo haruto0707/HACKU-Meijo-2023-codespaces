@@ -46,7 +46,11 @@
         <receiver
             android:name="com.raywenderlich.android.sleepguardian.receiver.SleepReceiver"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="ACTION_ALARM_STOPPED" />
+            </intent-filter>
+        </receiver>
         <receiver
             android:name="com.raywenderlich.android.sleepguardian.receiver.BootReceiver"
             android:enabled="true"
@@ -67,7 +71,7 @@
             android:enabled="true"
             android:exported="false" >
             <intent-filter>
-                <action android:name="custom.action" />
+                <action android:name="ACTION_ALARM_STOPPED" />
             </intent-filter>
         </receiver>
 
