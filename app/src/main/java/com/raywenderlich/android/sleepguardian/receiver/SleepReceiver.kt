@@ -45,24 +45,25 @@ import com.google.android.gms.location.SleepSegmentEvent
 class SleepReceiver : BroadcastReceiver() {
 
   override fun onReceive(context: Context, intent: Intent) {
-    if (SleepSegmentEvent.hasEvents(intent)) {
-      val events = SleepSegmentEvent.extractEvents(intent)
 
-      Log.d(TAG, "Logging SleepSegmentEvents")
-      for (event in events) {
-        Log.d(TAG,
-            "${event.startTimeMillis} to ${event.endTimeMillis} with status ${event.status}")
-      }
+    if (SleepSegmentEvent.hasEvents(intent)) {
+
     } else if (SleepClassifyEvent.hasEvents(intent)) {
       val events = SleepClassifyEvent.extractEvents(intent)
 
-      Log.d(TAG, "Logging SleepClassifyEvents")
+      Log.d(TAG, "Logging SleepClassifyEvents with Motion:")
+      val sendIntent = Intent("custom.action")
       for (event in events) {
         Log.d(TAG,
-        "Confidence: ${event.confidence} - Light: ${event.light} - Motion: ${event.motion}")
+          "Confidence: ${event.confidence} - Light: ${event.light} - Motion: ${event.motion}")
+        sendIntent.putExtra("key", event.motion)
+
+        // 別のReceiverにデータを送信
+        context.sendBroadcast(sendIntent)
       }
     }
   }
+
 
   companion object {
 

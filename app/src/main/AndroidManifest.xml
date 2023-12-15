@@ -15,10 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <receiver
-            android:name=".receiver.StopButtonReceiver"
-            android:enabled="true"
-            android:exported="false"/>
 
         <activity
             android:name=".secondAlerm"
@@ -58,7 +54,13 @@
         <receiver
             android:name=".receiver.AlarmReceiver"
             android:exported="true" />
-
+        <receiver android:name=".receiver.StopButtonReceiver"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="custom.action" />
+            </intent-filter>
+        </receiver>
         <service
             android:name=".AlarmService"
             android:enabled="true"
