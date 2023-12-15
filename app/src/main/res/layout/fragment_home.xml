@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    tools:context=".Home"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/selectedTime"
+        android:layout_marginTop="200dp"
+        android:text="XX:XX"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="46dp"/>
+
+    <Button
+        android:id="@+id/selectTimeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="36dp"
+        android:text="時間設定"
+        android:textSize="26dp"
+        android:translationY="250dp" />
+
+    <Button
+        android:id="@+id/setAlarmBtn"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="36dp"
+        android:text="アラームセット"
+        android:textSize="26dp"
+        android:translationY="330dp" />
+
+    <Button
+        android:id="@+id/cancelAlarmBtn"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="8dp"
+        android:text="アラームキャンセル"
+        android:textSize="26dp"
+        android:translationY="440dp" />
+
+
+
+
+</FrameLayout>

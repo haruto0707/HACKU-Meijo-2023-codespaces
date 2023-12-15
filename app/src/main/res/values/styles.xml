@@ -1,0 +1,32 @@
+<resources>
+
+  <!-- Base application Theme -->
+  <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="actionMenuTextColor">@color/titleTextColor</item>
+
+    <item name="actionOverflowButtonStyle">@style/Threedotcolor</item>
+  </style>
+
+
+  <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
+    <item name="android:textColor">@color/titleTextColor</item>
+  </style>
+
+
+  <!-- Splash Screen Theme -->
+  <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash_background</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">true</item>
+  </style>
+
+  <style name="Threedotcolor" parent="Widget.AppCompat.Light.ActionButton.Overflow">
+    <item name="tint">#6F6F6F</item>
+  </style>
+
+
+</resources>

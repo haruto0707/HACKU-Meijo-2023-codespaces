@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sleep Guardian</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="plus_button_description">Description for plus button</string>
+    <string name="volume_percentage">アラーム音量: %d%%</string>
+
+</resources>
