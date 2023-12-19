@@ -6,8 +6,12 @@
     <color name="colorPrimaryDark">#5CEFF8</color>
     <color name="ic_launcher_background">#000000</color>
     <color name="pressedColor">#5CEFF8</color>
+    <color name="selectedColor">#5CEFF8</color>
+    <color name="selectedTextColor">#6F6F6F</color>
     <color name="titleTextColor">#6F6F6F</color>
     <color name="topWhite">#FFFFFF</color>
+    <color name="unselectedColor">#BFFBFF</color>
+    <color name="unselectedTextColor">#6F6F6F</color>
     <string name="app_name">Sleep Guardian</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="plus_button_description">Description for plus button</string>
@@ -31,5 +35,13 @@
   </style>
     <style name="Threedotcolor" parent="Widget.AppCompat.Light.ActionButton.Overflow">
     <item name="tint">#6F6F6F</item>
+  </style>
+    <style name="ToggleSelected">
+    <item name="android:background">@color/selectedColor</item>
+    <item name="android:textColor">@color/selectedTextColor</item>
+  </style>
+    <style name="ToggleUnselected">
+    <item name="android:background">@color/unselectedColor</item>
+    <item name="android:textColor">@color/unselectedTextColor</item>
   </style>
 </resources>

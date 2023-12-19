@@ -1211,6 +1211,8 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color selectedColor
+color selectedTextColor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1223,6 +1225,8 @@ color titleTextColor
 color tooltip_background_dark
 color tooltip_background_light
 color topWhite
+color unselectedColor
+color unselectedTextColor
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -2234,6 +2238,13 @@ id titleDividerNoCustom
 id title_template
 id toHome
 id toggle
+id toggleFriday
+id toggleMonday
+id toggleSaturday
+id toggleSunday
+id toggleThursday
+id toggleTuesday
+id toggleWednesday
 id top
 id topPanel
 id touch_outside
@@ -3078,6 +3089,8 @@ style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
 style ThemeOverlayColorAccentRed
 style Threedotcolor
+style ToggleSelected
+style ToggleUnselected
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

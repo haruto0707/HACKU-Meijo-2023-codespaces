@@ -5,14 +5,18 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.fragment.app.Fragment
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -41,6 +45,99 @@ class Home : Fragment() {
 
         binding = FragmentHomeBinding.inflate(layoutInflater)
         createNotificationChannel()
+
+        initialToggleButtons()
+    }
+
+    private fun initialToggleButtons() {
+        binding.toggleSunday.isChecked = true
+        updateToggleButtonStyle(binding.toggleSunday, true)
+
+        val toggleButtonListener = View.OnClickListener{view ->
+
+            val selectedToggleButton = view as ToggleButton
+            if(selectedToggleButton.isChecked)
+            {
+                deselectOtherToggleButtons(selectedToggleButton.id)
+                updateToggleButtonStyle(selectedToggleButton,true)
+            }
+            else
+            {
+                updateToggleButtonStyle(selectedToggleButton,false)
+            }
+
+            
+        }
+
+        binding.toggleSunday.setOnClickListener(toggleButtonListener)
+        binding.toggleMonday.setOnClickListener(toggleButtonListener)
+        binding.toggleTuesday.setOnClickListener(toggleButtonListener)
+        binding.toggleWednesday.setOnClickListener(toggleButtonListener)
+        binding.toggleThursday.setOnClickListener(toggleButtonListener)
+        binding.toggleFriday.setOnClickListener(toggleButtonListener)
+        binding.toggleSaturday.setOnClickListener(toggleButtonListener)
+
+    }
+
+    private fun deselectOtherToggleButtons(selectedId: Int) {
+
+        val toggleisChecked = requireContext().getSharedPreferences("toggleisChecked",MODE_PRIVATE)
+        val editor = toggleisChecked.edit()
+
+        val allToggleButton = listOf(
+            "toggleSunday" to binding.toggleSunday,
+            "toggleMonday" to binding.toggleMonday,
+            "toggleTuesday" to binding.toggleTuesday,
+            "toggleWednesday" to binding.toggleWednesday,
+            "toggleThursday" to binding.toggleThursday,
+            "toggleFriday" to binding.toggleFriday,
+            "toggleSturday" to binding.toggleSaturday
+        )
+
+        for ((key, toggleButton) in allToggleButton) {
+            if (toggleButton.id != selectedId) {
+                toggleButton.isChecked = false
+                updateToggleButtonStyle(toggleButton, false)
+                editor.putBoolean(key, false)
+            } else {
+                updateToggleButtonStyle(toggleButton, true)
+                editor.putBoolean(key, true)
+            }
+        }
+
+        editor.apply()
+        getCheckedDates()
+    }
+
+    fun getCheckedDates(): List<String> {
+        val sharedPreferences = requireContext().getSharedPreferences("toggleisChecked", Context.MODE_PRIVATE)
+        val allEntries = sharedPreferences.all
+        val checkedDates = mutableListOf<String>()
+
+        for ((key, value) in allEntries) {
+            if (value is Boolean && value) {
+                checkedDates.add(key)
+            }
+        }
+        Log.d("CheckedDates", checkedDates.joinToString(", "))
+        return checkedDates
+    }
+
+
+
+    private fun updateToggleButtonStyle(toggleButton: ToggleButton, isSelected: Boolean) {
+
+        if(isSelected)
+        {
+            toggleButton.setBackgroundResource(R.color.selectedColor)
+            toggleButton.setTextColor(resources.getColor(R.color.selectedTextColor))
+        }
+        else
+        {
+            toggleButton.setBackgroundResource(R.color.unselectedColor)
+            toggleButton.setTextColor(resources.getColor(R.color.unselectedTextColor))
+        }
+
     }
 
     private fun createNotificationChannel() {
