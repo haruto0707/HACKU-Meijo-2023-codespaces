@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -32,13 +33,45 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final Button setAlarmBtn;
 
+  @NonNull
+  public final ToggleButton toggleFriday;
+
+  @NonNull
+  public final ToggleButton toggleMonday;
+
+  @NonNull
+  public final ToggleButton toggleSaturday;
+
+  @NonNull
+  public final ToggleButton toggleSunday;
+
+  @NonNull
+  public final ToggleButton toggleThursday;
+
+  @NonNull
+  public final ToggleButton toggleTuesday;
+
+  @NonNull
+  public final ToggleButton toggleWednesday;
+
   private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull Button cancelAlarmBtn,
-      @NonNull Button selectTimeBtn, @NonNull TextView selectedTime, @NonNull Button setAlarmBtn) {
+      @NonNull Button selectTimeBtn, @NonNull TextView selectedTime, @NonNull Button setAlarmBtn,
+      @NonNull ToggleButton toggleFriday, @NonNull ToggleButton toggleMonday,
+      @NonNull ToggleButton toggleSaturday, @NonNull ToggleButton toggleSunday,
+      @NonNull ToggleButton toggleThursday, @NonNull ToggleButton toggleTuesday,
+      @NonNull ToggleButton toggleWednesday) {
     this.rootView = rootView;
     this.cancelAlarmBtn = cancelAlarmBtn;
     this.selectTimeBtn = selectTimeBtn;
     this.selectedTime = selectedTime;
     this.setAlarmBtn = setAlarmBtn;
+    this.toggleFriday = toggleFriday;
+    this.toggleMonday = toggleMonday;
+    this.toggleSaturday = toggleSaturday;
+    this.toggleSunday = toggleSunday;
+    this.toggleThursday = toggleThursday;
+    this.toggleTuesday = toggleTuesday;
+    this.toggleWednesday = toggleWednesday;
   }
 
   @Override
@@ -92,8 +125,51 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.toggleFriday;
+      ToggleButton toggleFriday = ViewBindings.findChildViewById(rootView, id);
+      if (toggleFriday == null) {
+        break missingId;
+      }
+
+      id = R.id.toggleMonday;
+      ToggleButton toggleMonday = ViewBindings.findChildViewById(rootView, id);
+      if (toggleMonday == null) {
+        break missingId;
+      }
+
+      id = R.id.toggleSaturday;
+      ToggleButton toggleSaturday = ViewBindings.findChildViewById(rootView, id);
+      if (toggleSaturday == null) {
+        break missingId;
+      }
+
+      id = R.id.toggleSunday;
+      ToggleButton toggleSunday = ViewBindings.findChildViewById(rootView, id);
+      if (toggleSunday == null) {
+        break missingId;
+      }
+
+      id = R.id.toggleThursday;
+      ToggleButton toggleThursday = ViewBindings.findChildViewById(rootView, id);
+      if (toggleThursday == null) {
+        break missingId;
+      }
+
+      id = R.id.toggleTuesday;
+      ToggleButton toggleTuesday = ViewBindings.findChildViewById(rootView, id);
+      if (toggleTuesday == null) {
+        break missingId;
+      }
+
+      id = R.id.toggleWednesday;
+      ToggleButton toggleWednesday = ViewBindings.findChildViewById(rootView, id);
+      if (toggleWednesday == null) {
+        break missingId;
+      }
+
       return new FragmentHomeBinding((FrameLayout) rootView, cancelAlarmBtn, selectTimeBtn,
-          selectedTime, setAlarmBtn);
+          selectedTime, setAlarmBtn, toggleFriday, toggleMonday, toggleSaturday, toggleSunday,
+          toggleThursday, toggleTuesday, toggleWednesday);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

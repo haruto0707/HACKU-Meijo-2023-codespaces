@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.raywenderlich.android.sleepguardian.app-mergeDebugResources-2:/values-w480dp-port-v13/values-w480dp-port-v13.xml",
+            "outputFile": "com.raywenderlich.android.sleepguardian.app-mergeDebugResources-24:/values-w480dp-port-v13/values-w480dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\harut\\.gradle\\caches\\transforms-3\\8c7ccdce08ffea2c8fbc964444f949b1\\transformed\\material-1.4.0\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
+                    "source": "C:\\Users\\kqcdq\\.gradle\\caches\\transforms-3\\8c7ccdce08ffea2c8fbc964444f949b1\\transformed\\material-1.4.0\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -97,6 +97,10 @@ class AlarmService : Service() {
         mediaPlayer.stop()
         // 通知をキャンセル
         notificationManager.cancel(NOTIFICATION_ID)
+
+        // SleepReceiverをトリガーするインテントを送信
+        val triggerIntent = Intent("com.raywenderlich.android.ACTION_TRIGGER_SLEEP_RECEIVER")
+        sendBroadcast(triggerIntent)  // context?.sendBroadcast(triggerIntent) から変更
     }
 
     companion object {

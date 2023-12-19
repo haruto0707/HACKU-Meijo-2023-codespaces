@@ -7,4 +7,8 @@
   <color name="topWhite">#FFFFFF</color>
   <color name="titleTextColor">#6F6F6F</color>
   <color name="pressedColor">#5CEFF8</color>
+  <color name="selectedColor">#5CEFF8</color>
+  <color name="selectedTextColor">#6F6F6F</color>
+  <color name="unselectedColor">#BFFBFF</color>
+  <color name="unselectedTextColor">#6F6F6F</color>
 </resources>

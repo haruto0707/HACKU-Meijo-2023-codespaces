@@ -13,48 +13,40 @@ import com.raywenderlich.android.sleepguardian.AlarmService
 import java.util.concurrent.TimeUnit
 
 class SleepReceiver : BroadcastReceiver() {
+  var cnt = 1;
+
 
   override fun onReceive(context: Context, intent: Intent) {
-    if ("ACTION_ALARM_STOPPED" == intent.action) {
-      // ブロードキャストからboolean型の値を取得
-      val isAlarmStopped = intent.getBooleanExtra("isAlarmStopped", false)
+    val prefs = context.getSharedPreferences("SleepReceiverPrefs", Context.MODE_PRIVATE)
+    val isAlarmScheduled = prefs.getBoolean("isAlarmScheduled", false)
 
-      if (isAlarmStopped) {
-        if (SleepSegmentEvent.hasEvents(intent)) {
-          val events = SleepSegmentEvent.extractEvents(intent)
+    if (!isAlarmScheduled) {
+      scheduleAlarm(context)
+      prefs.edit().putBoolean("isAlarmScheduled", true).apply()
+    }
+  }
 
-          Log.d(TAG, "Logging SleepSegmentEvents")
-          for (event in events) {
-            Log.d(TAG,
-              "${event.startTimeMillis} to ${event.endTimeMillis} with status ${event.status}")
-          }
-        } else if (SleepClassifyEvent.hasEvents(intent)) {
-          val events = SleepClassifyEvent.extractEvents(intent)
-
-          Log.d(TAG, "Logging SleepClassifyEvents")
-          for (event in events) {
-            Log.d(TAG,
-              "Confidence: ${event.confidence} - Light: ${event.light} - Motion: ${event.motion}")
-
-            if (event.motion == 1) {
-              scheduleAlarm(context)
-            }
-          }
-        }
+  private fun handleSleepEvents(events: List<SleepClassifyEvent>, context: Context) {
+    for (event in events) {
+      Log.d(TAG, "Handling SleepClassifyEvent: $event")
+      if (event.motion == 0) {
+        scheduleAlarm(context)
       }
     }
   }
 
   private fun scheduleAlarm(context: Context) {
+    Log.d(TAG, "Scheduling alarm")
     val handler = Handler(Looper.getMainLooper())
     handler.postDelayed({
       val alarmIntent = Intent(context, AlarmService::class.java)
       context.startService(alarmIntent)
-    }, TimeUnit.MINUTES.toMillis(5)) // 5分後にスケジュール、必要に応じて調整してください
+      Log.d(TAG, "Alarm scheduled")
+    }, TimeUnit.MINUTES.toMillis(1)) // 1分後にスケジュール
   }
 
-  companion object {
 
+  companion object {
     private const val TAG = "SLEEP_RECEIVER"
 
     fun createPendingIntent(context: Context): PendingIntent {

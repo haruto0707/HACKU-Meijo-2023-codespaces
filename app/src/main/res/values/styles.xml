@@ -28,5 +28,17 @@
     <item name="tint">#6F6F6F</item>
   </style>
 
+  <!-- 選択された曜日のスタイル -->
+  <style name="ToggleSelected">
+    <item name="android:background">@color/selectedColor</item>
+    <item name="android:textColor">@color/selectedTextColor</item>
+  </style>
+
+  <!-- 非選択の曜日のスタイル -->
+  <style name="ToggleUnselected">
+    <item name="android:background">@color/unselectedColor</item>
+    <item name="android:textColor">@color/unselectedTextColor</item>
+  </style>
+
 
 </resources>

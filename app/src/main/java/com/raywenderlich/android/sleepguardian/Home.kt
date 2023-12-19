@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.fragment.app.Fragment
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -41,7 +42,112 @@ class Home : Fragment() {
 
         binding = FragmentHomeBinding.inflate(layoutInflater)
         createNotificationChannel()
+        // トグルボタンの初期設定とリスナーの設定
+        initializeToggleButtons()
+
     }
+
+    // 曜日の選択状態を保存する
+    private fun saveDaySelection(day: String, isSelected: Boolean) {
+        val prefs = requireContext().getSharedPreferences("DaySelections", Context.MODE_PRIVATE)
+        prefs.edit().putBoolean(day, isSelected).apply()
+    }
+
+    private fun initializeToggleButtons() {
+        binding.toggleSunday.isChecked = true
+        updateToggleButtonStyle(binding.toggleSunday, true)
+        displayAlarmTimeForDay("Sunday")
+
+        val toggleButtonListener = View.OnClickListener { view ->
+            val selectedToggleButton = view as ToggleButton
+            val day = getDayFromToggleButton(selectedToggleButton.id)
+            if (selectedToggleButton.isChecked) {
+                deselectOtherToggleButtons(selectedToggleButton.id)
+                updateToggleButtonStyle(selectedToggleButton, true)
+                saveDaySelection(day, true)
+            } else {
+                updateToggleButtonStyle(selectedToggleButton, false)
+                saveDaySelection(day, false)
+            }
+            displayAlarmTimeForDay(day)
+        }
+
+
+        binding.toggleSunday.setOnClickListener(toggleButtonListener)
+        binding.toggleMonday.setOnClickListener(toggleButtonListener)
+        binding.toggleTuesday.setOnClickListener(toggleButtonListener)
+        binding.toggleWednesday.setOnClickListener(toggleButtonListener)
+        binding.toggleThursday.setOnClickListener(toggleButtonListener)
+        binding.toggleFriday.setOnClickListener(toggleButtonListener)
+        binding.toggleSaturday.setOnClickListener(toggleButtonListener)
+    }
+
+    private fun saveAlarmTimeForDay(day: String, timeInMillis: Long) {
+        val sharedPreferences = requireContext().getSharedPreferences("AlarmTimePerDay", Context.MODE_PRIVATE)
+        sharedPreferences.edit().putLong(day, timeInMillis).apply()
+    }
+
+    private fun displayAlarmTimeForDay(day: String) {
+        val sharedPreferences = requireContext().getSharedPreferences("AlarmTimePerDay", Context.MODE_PRIVATE)
+        val savedTimeInMillis = sharedPreferences.getLong(day, -1L)
+
+        if (savedTimeInMillis != -1L) {
+            val calendar = Calendar.getInstance().apply { timeInMillis = savedTimeInMillis }
+            val formattedTime = formatTime(calendar[Calendar.HOUR_OF_DAY], calendar[Calendar.MINUTE])
+            binding.selectedTime.text = formattedTime
+        } else {
+            binding.selectedTime.text = "XX:XX"
+        }
+    }
+
+
+    // IDから曜日を取得する
+    private fun getDayFromToggleButton(id: Int): String {
+        return when (id) {
+            R.id.toggleSunday -> "Sunday"
+            R.id.toggleMonday -> "Monday"
+            R.id.toggleTuesday -> "Tuesday"
+            R.id.toggleWednesday -> "Wednesday"
+            R.id.toggleThursday -> "Thursday"
+            R.id.toggleFriday -> "Friday"
+            R.id.toggleSaturday -> "Saturday"
+            else -> ""
+        }
+    }
+
+    private fun deselectOtherToggleButtons(selectedId: Int) {
+        val allToggleButtons = listOf(
+            binding.toggleSunday,
+            binding.toggleMonday,
+            binding.toggleTuesday,
+            binding.toggleWednesday,
+            binding.toggleThursday,
+            binding.toggleFriday,
+            binding.toggleSaturday
+        )
+
+        for (toggleButton in allToggleButtons) {
+            if (toggleButton.id != selectedId) {
+                toggleButton.isChecked = false
+                updateToggleButtonStyle(toggleButton, false)
+            }
+        }
+    }
+
+
+    private fun updateToggleButtonStyle(toggleButton: ToggleButton, isSelected: Boolean) {
+
+        if (isSelected) {
+            toggleButton.setBackgroundResource(R.color.selectedColor)
+            toggleButton.setTextColor(resources.getColor(R.color.selectedTextColor))
+        } else {
+            toggleButton.setBackgroundResource(R.color.unselectedColor)
+            toggleButton.setTextColor(resources.getColor(R.color.unselectedTextColor))
+        }
+
+    }
+
+
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= 26) {
@@ -69,6 +175,7 @@ class Home : Fragment() {
         binding.setAlarmBtn.setOnClickListener {
             // ここにアラームを設定する処理を追加
             setAlarm()
+            resetAlarmScheduledFlag()
         }
         binding.cancelAlarmBtn.setOnClickListener {
             // ここにアラームをキャンセルする処理を追加
@@ -84,6 +191,11 @@ class Home : Fragment() {
         }
 
         return view
+    }
+
+    private fun resetAlarmScheduledFlag() {
+        val prefs = requireContext().getSharedPreferences("SleepReceiverPrefs", Context.MODE_PRIVATE)
+        prefs.edit().putBoolean("isAlarmScheduled", false).apply()
     }
 
     private fun getSavedAlarmTime(): Long {
@@ -126,6 +238,7 @@ class Home : Fragment() {
     }
 
     private fun setAlarm() {
+
         // AlarmManagerを取得
         alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
@@ -138,6 +251,17 @@ class Home : Fragment() {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
+        val prefs = requireContext().getSharedPreferences("DaySelections", Context.MODE_PRIVATE)
+//        val isSundaySelected = prefs.getBoolean("Sunday", false)
+//        val isMondaySelected = prefs.getBoolean("Monday", false)
+//        val isTuesdaySelected = prefs.getBoolean("Tuesday",false)
+//        val isWednesdaySelected = prefs.getBoolean("Wednesday",false)
+//        val isThursdaySelected = prefs.getBoolean("Thursday",false)
+//        val isFridaySelected = prefs.getBoolean("Friday",false)
+//        val isSaturdaySelected = prefs.getBoolean("Saturday",false)
+
+
+
         // ユーザーが選択した時刻をセット
         calendar = Calendar.getInstance()
         calendar[Calendar.HOUR_OF_DAY] = picker.hour
@@ -146,18 +270,77 @@ class Home : Fragment() {
         calendar[Calendar.MILLISECOND] = 0
 
         // SharedPreferencesにユーザーが選択した時刻を保存
-        saveAlarmTime(calendar.timeInMillis)
-
-        // アラームを設定
-        alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP,
-            calendar.timeInMillis,
-            AlarmManager.INTERVAL_DAY,
-            pendingIntent
-        )
+        if (prefs.getBoolean("Sunday", false)) {
+            setSingleAlarmForDay("Sunday", Calendar.SUNDAY)
+        }
+        if (prefs.getBoolean("Monday", false)) {
+            setSingleAlarmForDay("Monday", Calendar.MONDAY)
+        }
+        if (prefs.getBoolean("Tuesday", false)) {
+            setSingleAlarmForDay("Tuesday", Calendar.TUESDAY)
+        }
+        if (prefs.getBoolean("Wednesday", false)) {
+            setSingleAlarmForDay("Wednesday", Calendar.WEDNESDAY)
+        }
+        if (prefs.getBoolean("Thursday", false)) {
+            setSingleAlarmForDay("Thursday", Calendar.THURSDAY)
+        }
+        if (prefs.getBoolean("Friday", false)) {
+            setSingleAlarmForDay("Friday", Calendar.FRIDAY)
+        }
+        if (prefs.getBoolean("Saturday", false)) {
+            setSingleAlarmForDay("Saturday", Calendar.SATURDAY)
+        }
 
         Toast.makeText(requireContext(), "アラームをセットしました", Toast.LENGTH_SHORT).show()
     }
+
+    private fun setSingleAlarmForDay(day: String, dayOfWeek: Int) {
+        val sharedPreferences = requireContext().getSharedPreferences("AlarmTimePerDay", Context.MODE_PRIVATE)
+        val timeInMillis = sharedPreferences.getLong(day, -1L)
+
+        if (timeInMillis != -1L) {
+            val alarmCalendar = getNextAlarmCalendar(timeInMillis, dayOfWeek)
+            val intent = Intent(requireContext(), AlarmReceiver::class.java)
+            val pendingIntent = PendingIntent.getBroadcast(
+                requireContext(),
+                dayOfWeek,  // 使用している曜日を識別するためのユニークなIDとして
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT
+            )
+
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmCalendar.timeInMillis, pendingIntent)
+        }
+    }
+
+    private fun getNextAlarmCalendar(timeInMillis: Long, dayOfWeek: Int): Calendar {
+        val alarmCalendar = Calendar.getInstance().apply {
+            this.timeInMillis = timeInMillis
+            set(Calendar.DAY_OF_WEEK, dayOfWeek)
+            if (this.before(Calendar.getInstance())) {
+                add(Calendar.WEEK_OF_YEAR, 1)
+            }
+        }
+        return alarmCalendar
+    }
+
+
+    private fun setSingleAlarm(alarmCalendar: Calendar) {
+        val intent = Intent(requireContext(), AlarmReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setExact(
+            AlarmManager.RTC_WAKEUP,
+            alarmCalendar.timeInMillis,
+            pendingIntent
+        )
+    }
+
+
 
     private fun saveAlarmTime(timeInMillis: Long) {
         val sharedPreferences = requireContext().getSharedPreferences("AlarmPreferences", Context.MODE_PRIVATE)
@@ -182,26 +365,38 @@ class Home : Fragment() {
         picker.show(parentFragmentManager, "Sleep Guardian")
 
         picker.addOnPositiveButtonClickListener {
-            val formattedTime = if (picker.hour > 12) {
-                String.format("%02d", picker.hour - 12) + ":" + String.format(
-                    "%02d",
-                    picker.minute
-                ) + "PM"
-            } else {
-                String.format("%02d", picker.hour) + ":" + String.format(
-                    "%02d",
-                    picker.minute
-                ) + "AM"
+            val selectedDay = getSelectedDay()
+            if (selectedDay.isNotEmpty()) {
+                val formattedTime = formatTime(picker.hour, picker.minute)
+                binding.selectedTime.text = formattedTime
+                val selectedCalendar = Calendar.getInstance().apply {
+                    set(Calendar.HOUR_OF_DAY, picker.hour)
+                    set(Calendar.MINUTE, picker.minute)
+                    set(Calendar.SECOND, 0)
+                    set(Calendar.MILLISECOND, 0)
+                }
+                saveAlarmTimeForDay(selectedDay, selectedCalendar.timeInMillis)
             }
-
-            binding.selectedTime.text = formattedTime
-
-            calendar = Calendar.getInstance()
-            calendar[Calendar.HOUR_OF_DAY] = picker.hour
-            calendar[Calendar.MINUTE] = picker.minute
-            calendar[Calendar.SECOND] = 0
-            calendar[Calendar.MILLISECOND] = 0
         }
+    }
+
+    private fun formatTime(hour: Int, minute: Int): String {
+        return String.format("%02d:%02d", hour, minute)
+    }
+
+
+    private fun getSelectedDay(): String {
+        return when{
+            binding.toggleSunday.isChecked -> "Sunday"
+            binding.toggleMonday.isChecked -> "Monday"
+            binding.toggleTuesday.isChecked -> "Tuesday"
+            binding.toggleWednesday.isChecked -> "Wednesday"
+            binding.toggleThursday.isChecked -> "Thursday"
+            binding.toggleFriday.isChecked -> "Friday"
+            binding.toggleSaturday.isChecked -> "Saturday"
+            else -> ""
+        }
+
     }
 
     companion object {

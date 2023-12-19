@@ -51,7 +51,78 @@
         android:textSize="26dp"
         android:translationY="440dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
 
+        <ToggleButton
+            android:id="@+id/toggleSunday"
+            style="@style/ToggleUnselected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOn="日"
+            android:textOff="日"
+            android:checked="false" />
+        <ToggleButton
+            android:id="@+id/toggleMonday"
+            style="@style/ToggleUnselected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOn="月"
+            android:textOff="月"
+            android:checked="false" />
+        <ToggleButton
+            android:id="@+id/toggleTuesday"
+            style="@style/ToggleUnselected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOn="火"
+            android:textOff="火"
+            android:checked="false" />
+        <ToggleButton
+            android:id="@+id/toggleWednesday"
+            style="@style/ToggleUnselected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOn="水"
+            android:textOff="水"
+            android:checked="false" />
+        <ToggleButton
+            android:id="@+id/toggleThursday"
+            style="@style/ToggleUnselected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOn="木"
+            android:textOff="木"
+            android:checked="false" />
+        <ToggleButton
+            android:id="@+id/toggleFriday"
+            style="@style/ToggleUnselected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOn="金"
+            android:textOff="金"
+            android:checked="false" />
+        <ToggleButton
+            android:id="@+id/toggleSaturday"
+            style="@style/ToggleUnselected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOn="土"
+            android:textOff="土"
+            android:checked="false" />
 
+    </LinearLayout>
 
 </FrameLayout>

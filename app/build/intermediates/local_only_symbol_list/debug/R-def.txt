@@ -6,8 +6,12 @@ color colorPrimary
 color colorPrimaryDark
 color ic_launcher_background
 color pressedColor
+color selectedColor
+color selectedTextColor
 color titleTextColor
 color topWhite
+color unselectedColor
+color unselectedTextColor
 drawable alarm_back
 drawable baseline_access_alarm_24
 drawable baseline_calendar_month_24
@@ -34,6 +38,13 @@ id textView
 id textView2
 id textView3
 id toHome
+id toggleFriday
+id toggleMonday
+id toggleSaturday
+id toggleSunday
+id toggleThursday
+id toggleTuesday
+id toggleWednesday
 id volumeSeekBar
 id volumeText
 layout activity_first_alarm
@@ -57,3 +68,5 @@ style AppTheme
 style SplashTheme
 style TextAppearance.AppCompat.Widget.ActionBar.Title
 style Threedotcolor
+style ToggleSelected
+style ToggleUnselected

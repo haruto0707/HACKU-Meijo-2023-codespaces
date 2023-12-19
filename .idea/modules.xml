@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/HACKU-Meijo-2023-codespaces.iml" filepath="$PROJECT_DIR$/.idea/HACKU-Meijo-2023-codespaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SleepGuardian.iml" filepath="$PROJECT_DIR$/.idea/modules/SleepGuardian.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SleepGuardian.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SleepGuardian.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SleepGuardian.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SleepGuardian.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SleepGuardian.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SleepGuardian.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SleepGuardian.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SleepGuardian.app.unitTest.iml" />
     </modules>
   </component>
 </project>

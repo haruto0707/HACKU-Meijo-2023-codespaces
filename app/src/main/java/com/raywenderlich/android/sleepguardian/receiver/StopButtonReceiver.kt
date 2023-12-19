@@ -12,20 +12,29 @@ import java.util.concurrent.TimeUnit
 
 class StopButtonReceiver : BroadcastReceiver() {
 
+
+
     override fun onReceive(context: Context?, intent: Intent?) {
         // アラームを停止するための処理
         stopAlarm(context)
 
+        // 5分後にSleepReceiverを起動
+        scheduleSleepReceiver(context)
     }
 
     private fun stopAlarm(context: Context?) {
         // アラーム停止の処理を追加
         val stopIntent = Intent(context, AlarmService::class.java)
         context?.stopService(stopIntent)
-
-        // boolean型の値をSleepReceiverに送信
-        val broadcastIntent = Intent("ACTION_ALARM_STOPPED")
-        broadcastIntent.putExtra("isAlarmStopped", true)
-        context?.sendBroadcast(broadcastIntent)
     }
+
+    private fun scheduleSleepReceiver(context: Context?) {
+
+        val sleepReceiverIntent = Intent(context, SleepReceiver::class.java)
+
+        // SleepReceiverを起動
+        context?.sendBroadcast(sleepReceiverIntent)
+    }
+
+
 }
