@@ -56,16 +56,16 @@ class Home : Fragment() {
         val toggleButtonListener = View.OnClickListener{view ->
 
             val selectedToggleButton = view as ToggleButton
-            val day = getDayKeyFromToggleButtonId(selectedToggleButton.id)
             if(selectedToggleButton.isChecked)
             {
+                val day = getDayKeyFromToggleButtonId(selectedToggleButton.id)
                 deselectOtherToggleButtons(selectedToggleButton.id)
                 updateToggleButtonStyle(selectedToggleButton,true)
                 updateDisplay(day)
             }
             else
             {
-                updateToggleButtonStyle(selectedToggleButton,false)
+                updateToggleButtonStyle(selectedToggleButton,true)
             }
         }
 
@@ -493,9 +493,6 @@ class Home : Fragment() {
         val editor = sharedPreferences.edit()
 
         val checkedDates = getCheckedDates()
-//        for (day in checkedDates) {
-//            editor.putLong(day, timeInMillis)
-//        }
         editor.putLong(checkedDates,timeInMillis)
         editor.apply()
 
