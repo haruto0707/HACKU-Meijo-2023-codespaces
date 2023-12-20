@@ -109,18 +109,20 @@ class Home : Fragment() {
         getCheckedDates()
     }
 
-    fun getCheckedDates(): List<String> {
+    fun getCheckedDates(): String? {
         val sharedPreferences = requireContext().getSharedPreferences("toggleisChecked", Context.MODE_PRIVATE)
         val allEntries = sharedPreferences.all
-        val checkedDates = mutableListOf<String>()
+//        val checkedDates = mutableListOf<String>()
 
         for ((key, value) in allEntries) {
             if (value is Boolean && value) {
-                checkedDates.add(key)
+//                checkedDates.add(key)
+                return key
             }
         }
-        Log.d("CheckedDates", checkedDates.joinToString(", "))
-        return checkedDates
+//        Log.d("CheckedDates", checkedDates.joinToString(", "))
+////        return checkedDates
+        return null
     }
 
 
@@ -223,50 +225,197 @@ class Home : Fragment() {
     }
 
     private fun setAlarm() {
+
+        val day = getCheckedDates()
+        val prefs2 = requireContext().getSharedPreferences("AlarmPreferences", Context.MODE_PRIVATE)
+
+        val alarmTime = prefs2.getLong(day,-1L)
+
         // AlarmManagerを取得
         alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
         // アラームをセットするためのIntent
-        val intent = Intent(requireContext(), AlarmReceiver::class.java)
-        pendingIntent = PendingIntent.getBroadcast(
-            requireContext(),
-            0,
-            intent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
+
+        if(day != null)
+        {
+            val alarmCalendar = Calendar.getInstance().apply {
+                timeInMillis = alarmTime
+                setToNextWeekday(day)
+            }
+
+            if (day == "toggleSunday") {
+                val intentSunday = Intent(requireContext(), AlarmReceiver::class.java)
+                val pendingSunday = PendingIntent.getBroadcast(
+                    requireContext(),
+                    0,
+                    intentSunday,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                alarmManager.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    alarmCalendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY * 7,
+                    pendingSunday
+                )
+            }
+            else if (day == "toggleMonday") {
+                val intentMonday = Intent(requireContext(), AlarmReceiver::class.java)
+                val pendingMonday = PendingIntent.getBroadcast(
+                    requireContext(),
+                    1,
+                    intentMonday,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                alarmManager.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    alarmCalendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY * 7,
+                    pendingMonday
+                )
+            }
+            else if (day == "toggleTuesday") {
+                val intentTuesday = Intent(requireContext(), AlarmReceiver::class.java)
+                val pendingTuesday = PendingIntent.getBroadcast(
+                    requireContext(),
+                    2,
+                    intentTuesday,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                alarmManager.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    alarmCalendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY * 7,
+                    pendingTuesday
+                )
+            }
+            else if (day == "toggleWednesday") {
+                val intentWednesday = Intent(requireContext(), AlarmReceiver::class.java)
+                val pendingWednesday = PendingIntent.getBroadcast(
+                    requireContext(),
+                    3,
+                    intentWednesday,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                alarmManager.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    alarmCalendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY * 7,
+                    pendingWednesday
+                )
+            }
+            else if (day == "toggleThursday") {
+                val intentThursday = Intent(requireContext(), AlarmReceiver::class.java)
+                val pendingThursday = PendingIntent.getBroadcast(
+                    requireContext(),
+                    4,
+                    intentThursday,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                alarmManager.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    alarmCalendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY * 7,
+                    pendingThursday
+                )
+            }
+            else if (day == "toggleFriday") {
+                val intentFriday = Intent(requireContext(), AlarmReceiver::class.java)
+                val pendingFriday = PendingIntent.getBroadcast(
+                    requireContext(),
+                    5,
+                    intentFriday,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                alarmManager.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    alarmCalendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY * 7,
+                    pendingFriday
+                )
+            }
+            else if (day == "toggleSaturday") {
+                val intentSaturday = Intent(requireContext(), AlarmReceiver::class.java)
+                val pendingSaturday = PendingIntent.getBroadcast(
+                    requireContext(),
+                    6,
+                    intentSaturday,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                alarmManager.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    alarmCalendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY * 7,
+                    pendingSaturday
+                )
+            }
+            else
+            {
+                Log.d("setAlarm","no toggle setAlarm")
+            }
+
+            Toast.makeText(requireContext(), "アラームをセットしました", Toast.LENGTH_SHORT).show()
+        }
+        else
+        {
+            Toast.makeText(requireContext(),"アラーム時刻が設定されていません",Toast.LENGTH_SHORT).show()
+        }
 
         // ユーザーが選択した時刻をセット
-        calendar = Calendar.getInstance()
-        calendar[Calendar.HOUR_OF_DAY] = picker.hour
-        calendar[Calendar.MINUTE] = picker.minute
-        calendar[Calendar.SECOND] = 0
-        calendar[Calendar.MILLISECOND] = 0
+//        calendar = Calendar.getInstance(alarmTime)
+//        calendar[Calendar.HOUR_OF_DAY] = alarmTime.hour
+//        calendar[Calendar.MINUTE] = alarmTime.minute
+//        calendar[Calendar.SECOND] = 0
+//        calendar[Calendar.MILLISECOND] = 0
+
+//        calendar = Calendar.getInstance()
+//        calendar[Calender.HOUR_OF_DAY] =
 
         // SharedPreferencesにユーザーが選択した時刻を保存
-        saveAlarmTime(calendar.timeInMillis)
+//        saveAlarmTime(calendar.timeInMillis)
 
         // アラームを設定
-        alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP,
-            calendar.timeInMillis,
-            AlarmManager.INTERVAL_DAY,
-            pendingIntent
-        )
+//        alarmManager.setRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            calendar.timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
 
-        Toast.makeText(requireContext(), "アラームをセットしました", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(requireContext(), "アラームをセットしました", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun Calendar.setToNextWeekday(day: String) {
+        val dayOfWeek = when(day){
+            "toggleSunday" -> Calendar.SUNDAY
+            "toggleMonday" -> Calendar.MONDAY
+            "toggleTuesday" -> Calendar.TUESDAY
+            "toggleWednesday" -> Calendar.WEDNESDAY
+            "toggleThursday" -> Calendar.THURSDAY
+            "toggleFriday" -> Calendar.FRIDAY
+            "toggleSaturday" -> Calendar.SATURDAY
+            else -> return
+        }
+
+        while(get(Calendar.DAY_OF_WEEK) != dayOfWeek)
+        {
+            add(Calendar.DAY_OF_YEAR,1)
+        }
+
     }
 
     private fun saveAlarmTime(timeInMillis: Long) {
         val sharedPreferences = requireContext().getSharedPreferences("AlarmPreferences", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        editor.putLong("alarmTime", timeInMillis)
+
+        val checkedDates = getCheckedDates()
+//        for (day in checkedDates) {
+//            editor.putLong(day, timeInMillis)
+//        }
+        editor.putLong(checkedDates,timeInMillis)
         editor.apply()
+
+        Log.d("AlarmSaved", "Alarm time saved for days: ${checkedDates}")
     }
-
-
-
-
-
 
     private fun showTimePicker() {
         picker = MaterialTimePicker.Builder()
@@ -298,6 +447,8 @@ class Home : Fragment() {
             calendar[Calendar.MINUTE] = picker.minute
             calendar[Calendar.SECOND] = 0
             calendar[Calendar.MILLISECOND] = 0
+
+            saveAlarmTime(calendar.timeInMillis)
         }
     }
 
