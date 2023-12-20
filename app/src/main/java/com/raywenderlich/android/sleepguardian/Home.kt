@@ -56,17 +56,17 @@ class Home : Fragment() {
         val toggleButtonListener = View.OnClickListener{view ->
 
             val selectedToggleButton = view as ToggleButton
+            val day = getDayKeyFromToggleButtonId(selectedToggleButton.id)
             if(selectedToggleButton.isChecked)
             {
                 deselectOtherToggleButtons(selectedToggleButton.id)
                 updateToggleButtonStyle(selectedToggleButton,true)
+                updateDisplay(day)
             }
             else
             {
                 updateToggleButtonStyle(selectedToggleButton,false)
             }
-
-            
         }
 
         binding.toggleSunday.setOnClickListener(toggleButtonListener)
@@ -78,6 +78,43 @@ class Home : Fragment() {
         binding.toggleSaturday.setOnClickListener(toggleButtonListener)
 
     }
+
+    private fun getDayKeyFromToggleButtonId(toggleButtonId: Int): String {
+        return when (toggleButtonId) {
+            R.id.toggleSunday -> "toggleSunday"
+            R.id.toggleMonday -> "toggleMonday"
+            R.id.toggleTuesday -> "toggleTuesday"
+            R.id.toggleWednesday -> "toggleWednesday"
+            R.id.toggleThursday -> "toggleThursday"
+            R.id.toggleFriday -> "toggleFriday"
+            R.id.toggleSaturday -> "toggleSaturday"
+            else -> ""
+        }
+    }
+
+    private fun updateDisplay(selectedToggleButton: String?) {
+        val prefs2 = requireContext().getSharedPreferences("AlarmPreferences", MODE_PRIVATE)
+        val alarmTime = prefs2.getLong(selectedToggleButton, -1L)
+
+        if (alarmTime != -1L) {
+            val alarmCalendar = Calendar.getInstance().apply {
+                timeInMillis = alarmTime
+            }
+            val hour = alarmCalendar.get(Calendar.HOUR_OF_DAY)
+            val minute = alarmCalendar.get(Calendar.MINUTE)
+            val amPm = if (hour < 12) "AM" else "PM"
+            val formattedHour = if (hour == 0) 12 else if (hour > 12) hour - 12 else hour
+
+            val formattedTime = String.format("%02d:%02d %s", formattedHour, minute, amPm)
+            binding.selectedTime.text = formattedTime
+            Log.d("updateDisplay","if")
+        } else {
+            binding.selectedTime.text = "XX:XX"
+            Log.d("updateDisplay","else")
+        }
+    }
+
+
 
     private fun deselectOtherToggleButtons(selectedId: Int) {
 
@@ -91,7 +128,7 @@ class Home : Fragment() {
             "toggleWednesday" to binding.toggleWednesday,
             "toggleThursday" to binding.toggleThursday,
             "toggleFriday" to binding.toggleFriday,
-            "toggleSturday" to binding.toggleSaturday
+            "toggleSaturday" to binding.toggleSaturday
         )
 
         for ((key, toggleButton) in allToggleButton) {
@@ -112,16 +149,14 @@ class Home : Fragment() {
     fun getCheckedDates(): String? {
         val sharedPreferences = requireContext().getSharedPreferences("toggleisChecked", Context.MODE_PRIVATE)
         val allEntries = sharedPreferences.all
-//        val checkedDates = mutableListOf<String>()
 
         for ((key, value) in allEntries) {
             if (value is Boolean && value) {
-//                checkedDates.add(key)
                 return key
             }
+
         }
-//        Log.d("CheckedDates", checkedDates.joinToString(", "))
-////        return checkedDates
+
         return null
     }
 
@@ -174,36 +209,10 @@ class Home : Fragment() {
             cancelAlarm()
         }
 
-        // アプリ起動時に保存された時刻を読み込んで表示
-        val savedAlarmTime = getSavedAlarmTime()
-        if (savedAlarmTime != -1L) {
-            calendar = Calendar.getInstance()
-            calendar.timeInMillis = savedAlarmTime
-            updateSelectedTimeText()
-        }
+        binding.toggleSunday.isChecked = true
+        updateDisplay(getCheckedDates())
 
         return view
-    }
-
-    private fun getSavedAlarmTime(): Long {
-        val sharedPreferences = requireContext().getSharedPreferences("AlarmPreferences", Context.MODE_PRIVATE)
-        return sharedPreferences.getLong("alarmTime", -1L)
-    }
-
-    private fun updateSelectedTimeText() {
-        val formattedTime = if (calendar[Calendar.HOUR_OF_DAY] > 12) {
-            String.format("%02d", calendar[Calendar.HOUR_OF_DAY] - 12) + ":" + String.format(
-                "%02d",
-                calendar[Calendar.MINUTE]
-            ) + "PM"
-        } else {
-            String.format("%02d", calendar[Calendar.HOUR_OF_DAY]) + ":" + String.format(
-                "%02d",
-                calendar[Calendar.MINUTE]
-            ) + "AM"
-        }
-
-        binding.selectedTime.text = formattedTime
     }
 
     private fun cancelAlarm() {
